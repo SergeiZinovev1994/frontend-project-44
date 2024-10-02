@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import { question, welcome } from "../src/cli.js";
 console.log('Welcome to the Brain Games!');
-let userName = question();
+export const userName = question();
 welcome(userName);
