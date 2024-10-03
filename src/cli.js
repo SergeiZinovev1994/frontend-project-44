@@ -45,8 +45,8 @@ export const gameCalc = (userAnswer, express, valueExpress, userName = 'Jho', co
     const getRndInteger = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     };
-    let a = Math.ceil(Math.random() * 10);
-    let b = Math.ceil(Math.random() * 10);
+    let a = Math.ceil(Math.random() * 100);
+    let b = Math.ceil(Math.random() * 100);
     const operand = ['+', '*', '-'];
     const randomOperand = operand[getRndInteger(0, 2)];
     express = a + randomOperand + b;

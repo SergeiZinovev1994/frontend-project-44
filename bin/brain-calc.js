@@ -1,4 +1,4 @@
-#! user/bin env node
+#!/usr/bin/env node
 
 import { userName } from "./brain-games.js";
 import { expression, gameCalc } from "../src/cli.js";
@@ -9,8 +9,8 @@ const getRndInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let a = Math.ceil(Math.random() * 10);
-let b = Math.ceil(Math.random() * 10);
+let a = Math.ceil(Math.random() * 100);
+let b = Math.ceil(Math.random() * 100);
 const operand = ['+', '*', '-'];
 const randomOperand = operand[getRndInteger(0, 2)];
 const express = a + randomOperand + b;
