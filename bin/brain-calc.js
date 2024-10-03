@@ -17,7 +17,6 @@ const express = a + randomOperand + b;
 
 const valueExpress = eval(express);
 
-
 const userAnswer = expression(express);
 
 gameCalc(userAnswer, express, valueExpress, userName);
