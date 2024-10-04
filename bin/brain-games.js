@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import { question, welcome } from "../src/cli.js";
+import { welcome } from "../src/index.js";
+import readlineSync from "../readline-sync/lib/readline-sync.js";
+
 console.log('Welcome to the Brain Games!');
-export const userName = question();
+export const userName = readlineSync.question(`May I have your name? `);
 welcome(userName);
