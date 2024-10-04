@@ -14,9 +14,7 @@ const b = Math.ceil(Math.random() * 10);
 const operand = ['+', '*', '-'];
 const randomOperand = operand[getRndInteger(0, 2)];
 const express = a + randomOperand + b;
-
 const valueExpress = eval(express);
-
 const userAnswer = expression(express);
 
 gameCalc(userAnswer, express, valueExpress, userName);
