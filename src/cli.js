@@ -1,4 +1,3 @@
-import { userName } from '../bin/brain-games.js';
 import readlineSync from '../readline-sync/lib/readline-sync.js';
 
 export const question = () => {
