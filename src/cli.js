@@ -5,6 +5,10 @@ export const question = () => {
   return question;
 };
 
+const getRndInteger = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 export const welcome = (userName) => console.log(`Hello, ${userName}!`);
 
 export const isEven = (number) => {
@@ -20,7 +24,12 @@ export const expression = (exp) => {
 export const getDividsor = (a, b) => {
   const dividsor = readlineSync.question(`Question: ${a} ${b} `);
   return dividsor;
-}
+};
+
+const getMissedValue = (arr) => {
+  const missedValue = readlineSync.question(`Question: ${arr} `);
+  return missedValue;
+};
 
 export const gameEven = (userAnswer, number = 1, userName = 'Jho', count = 0) => {
   let rightAnswer = number % 2 === 0 ? 'yes' : 'no';
@@ -83,3 +92,28 @@ export const gameGCD = (userName, count = 0) => {
       gameGCD(userName, count += 1);
   }
 }
+
+export const gameProgression = (userName, count = 0) => {
+  const progression = [];
+  const countElements = getRndInteger(10, 15);
+  const valueForStep = Math.ceil(Math.random() * 10);
+  progression[0] = Math.ceil(Math.random() * 10);
+  console.log(countElements);
+  for (let i = 1; i < countElements; i += 1) {
+    progression[i] = progression[i - 1] + valueForStep;
+  }
+  const somethingValue = getRndInteger(0, countElements - 1);
+  const rightAnswer = progression[somethingValue];
+  progression[somethingValue] = '..';
+  const userAnswer = getMissedValue(progression);
+  const result = +userAnswer || userAnswer;
+  if (result !== rightAnswer) {
+    return console.log(`Your answer: ${userAnswer}\n'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`)
+  } else {
+    console.log(`Your answer: ${userAnswer}\nCorrect!`);
+    if (count >= 2) {
+      return console.log(`Congratulations, ${userName}!`);
+    }
+    gameProgression(userName, count += 1);
+  }
+};
