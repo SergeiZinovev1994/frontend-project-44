@@ -36,8 +36,10 @@ const getNumber = (number) => {
   return num;
 };
 
-export const gameEven = (userAnswer, number = 1, userName = 'Jho', count = 0) => {
-  let rightAnswer = number % 2 === 0 ? 'yes' : 'no';
+export const gameEven = (userName = 'Jho', count = 0) => {
+  const randomNumber= Math.round((Math.random() * 1000));
+  const userAnswer = isEven(randomNumber);
+  let rightAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
 
   if (userAnswer !== rightAnswer) {
     return console.log(`Your answer : ${userAnswer}\n'${userAnswer}' is wrong answer ;/(. Correct answer was '${rightAnswer}'.\nLets try again, ${userName}`);
@@ -46,9 +48,7 @@ export const gameEven = (userAnswer, number = 1, userName = 'Jho', count = 0) =>
     if (count >= 2) {
       return console.log(`Congratulations, ${userName}!`);
     }
-    number = Math.round(Math.random() * 1000);
-    userAnswer = isEven(number);
-    gameEven (userAnswer, number, userName, count += 1)
+    gameEven (userName, count += 1);
   }
 }
 
