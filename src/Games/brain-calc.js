@@ -1,10 +1,4 @@
-import { getRndInteger } from "../cli.js";
-import readlineSync from "../../readline-sync/lib/readline-sync.js";
-
-const expression = (exp) => {
-  const question = readlineSync.question(`Question: ${exp} `);
-  return question;
-};
+import { countRounds, getRndInteger, quest } from "../index.js";
 
 export const gameCalc = (userName = 'Jho', count = 0) => {
   const a = Math.ceil(Math.random() * 10);
@@ -13,7 +7,7 @@ export const gameCalc = (userName = 'Jho', count = 0) => {
   const randomOperand = operand[getRndInteger(0, 2)];
   const express = a + randomOperand + b;
   const valueExpress = eval(express);
-  const userAnswer = expression(express);
+  const userAnswer = quest(express);
   let result = +userAnswer || userAnswer;
   if (userAnswer === '0') {
     result = 0;
@@ -22,7 +16,7 @@ export const gameCalc = (userName = 'Jho', count = 0) => {
     return console.log(`Your answer: ${result}\n'${result}' is wrong answer ;(. Correct answer was '${valueExpress}'`);
   } else {
     console.log(`Your answer : ${userAnswer}\nCorrect!`);
-    if (count >= 2) {
+    if (count >= countRounds - 1) {
       return console.log(`Congratulations, ${userName}!`);
     }
     gameCalc(userName, count += 1);

@@ -1,4 +1,5 @@
-import readlineSync from "../readline-sync/lib/readline-sync.js";
+import readlineSync from "../../node_modules/readline-sync/lib/readline-sync.js";
+import { countRounds } from "../index.js";
 
 const getNumber = (number) => {
   const num = readlineSync.question(`Question: ${number} `);
@@ -22,7 +23,7 @@ export const prime = (userName, count = 0) => {
     return console.log(`Your answer: ${userAnswer}\n'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
   } else {
     console.log(`Your answer: ${userAnswer}\nCorrect!`);
-    if (count >= 2) {
+    if (count >= countRounds - 1) {
       return console.log(`Congratulations, ${userName}!`);
     }
     prime(userName, count += 1);
