@@ -13,7 +13,7 @@ export const gameCalc = (userName = 'Jho', count = 0) => {
     result = 0;
   }
   if (valueExpress !== result) {
-    return console.log(`Your answer: ${result}\n'${result}' is wrong answer ;(. Correct answer was '${valueExpress}'`);
+    return console.log(`Your answer: ${result}\n'${result}' is wrong answer ;(. Correct answer was '${valueExpress}'.\nLet's try again, ${userName}`);
   } else {
     console.log(`Your answer : ${userAnswer}\nCorrect!`);
     if (count >= countRounds - 1) {
