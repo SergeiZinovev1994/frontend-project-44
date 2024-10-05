@@ -23,6 +23,6 @@
     "globals": "^15.9.0"
   },
   "dependencies": {
-    "readline-sync": "1.4.10"
+    "readline-sync": "^1.4.10"
   }
 }
