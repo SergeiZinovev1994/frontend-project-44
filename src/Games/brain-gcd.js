@@ -1,14 +1,14 @@
-import readlineSync from "readline-sync";
-import { countRounds } from "../index.js";
+import readlineSync from 'readline-sync';
+import { countRounds } from '../index.js';
 
 const getDividsor = (a, b) => {
   const dividsor = readlineSync.question(`Question: ${a} ${b} `);
   return dividsor;
 };
 
-export const gameGCD = (userName, count = 0) => {
-  let numberA = Math.ceil(Math.random() * 10);
-  let numberB = Math.ceil(Math.random() * 10);
+const gameGCD = (userName, count = 0) => {
+  const numberA = Math.ceil(Math.random() * 10);
+  const numberB = Math.ceil(Math.random() * 10);
   const userAnswer = getDividsor(numberA, numberB);
   const resultUserAnswer = +userAnswer || userAnswer;
   const smallerNumber = numberA >= numberB ? numberB : numberA;
@@ -22,9 +22,10 @@ export const gameGCD = (userName, count = 0) => {
     return console.log(`Your answer: ${userAnswer}\n'${userAnswer}' is wrong answer ;(. Correct answer was '${dividsor}'.\nLet's try again, ${userName}!`);
   } else {
     console.log(`Your answer: ${userAnswer}\nCorrect!`);
-      if (count >= countRounds - 1) {
-        return console.log(`Congratulations, ${userName}!`);
-      }
-      gameGCD(userName, count += 1);
+    if (count >= countRounds - 1) {
+      return console.log(`Congratulations, ${userName}!`);
+    }
+    return gameGCD(userName, count += 1);
   }
 };
+export default gameGCD;

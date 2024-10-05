@@ -1,14 +1,8 @@
-import readlineSync from "readline-sync";
-import { countRounds } from "../index.js";
+import { countRounds, quest } from '../index.js';
 
-const getNumber = (number) => {
-  const num = readlineSync.question(`Question: ${number} `);
-  return num;
-};
-
-export const prime = (userName, count = 0) => {
-  let randomNumber = Math.ceil(Math.random() * 100);
-  const userAnswer = getNumber(randomNumber);
+const prime = (userName, count = 0) => {
+  const randomNumber = Math.ceil(Math.random() * 100);
+  const userAnswer = quest(randomNumber);
   const result = +userAnswer || userAnswer;
   let rightAnswer = 'yes';
   let i = 2;
@@ -26,6 +20,7 @@ export const prime = (userName, count = 0) => {
     if (count >= countRounds - 1) {
       return console.log(`Congratulations, ${userName}!`);
     }
-    prime(userName, count += 1);
+    return prime(userName, count += 1);
   }
 };
+export default prime;
