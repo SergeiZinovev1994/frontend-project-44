@@ -6,12 +6,18 @@ const gameCalc = (userName = 'Jho', count = 0) => {
   const operand = ['+', '*', '-'];
   const randomOperand = operand[getRndInteger(0, 2)];
   const express = `${a} ${randomOperand} ${b}`;
-  const valueExpress = (a, randomOperand, b) => {
-    switch (randomOperand) {
-      case '+': return a + b;
-      case '-': return a - b;
-      case '*': return a * b;
+  const valueExpress = (val1, mathSign, val2) => {
+    let result = 0;
+    switch (mathSign) {
+      case '+': result = val1 + val2;
+      break;
+      case '-': result = val1 - val2;
+      break;
+      case '*': result = val1 * val2;
+      break;
+      default: result = 0;
     }
+    return result;
   };
   const userAnswer = quest(express);
   let result = +userAnswer || userAnswer;
