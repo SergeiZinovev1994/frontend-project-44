@@ -6,7 +6,7 @@ export const gameEven = (userName = 'Jho', count = 0) => {
   let rightAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
 
   if (userAnswer !== rightAnswer) {
-    return console.log(`Your answer : ${userAnswer}\n'${userAnswer}' is wrong answer ;/(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}`);
+    return console.log(`Your answer : ${userAnswer}\n'${userAnswer}' is wrong answer ;/(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
   } else {
     console.log(`Your answer : ${userAnswer}\nCorrect!`);
     if (count >= countRounds - 1) {
