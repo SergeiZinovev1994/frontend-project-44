@@ -1,4 +1,4 @@
-import readlineSync from '../readline-sync/lib/readline-sync.js';
+import readlineSync from 'readline-sync';
 
 export const question = (string) => {
   const question = readlineSync.question(`${string} `);

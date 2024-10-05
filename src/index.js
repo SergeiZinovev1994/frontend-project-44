@@ -1,4 +1,4 @@
-import readlineSync from "../node_modules/readline-sync/lib/readline-sync.js";
+import readlineSync from "readline-sync";
 
 export const quest = (number) => {
   const question = readlineSync.question(`Question: ${number} `);

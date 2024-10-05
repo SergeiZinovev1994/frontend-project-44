@@ -1,4 +1,4 @@
-import readlineSync from "../../node_modules/readline-sync/lib/readline-sync.js";
+import readlineSync from "readline-sync";
 import { getRndInteger } from "../index.js";
 import { countRounds } from "../index.js";
 
