@@ -8,7 +8,7 @@ const getMissedValue = (arr) => {
 };
 
 export const gameProgression = (userName, count = 0) => {
-  const progression = [];
+  let progression = [];
   const minEl = 10;
   const maxEl = 15;
   const countElements = getRndInteger(minEl, maxEl);
@@ -20,7 +20,8 @@ export const gameProgression = (userName, count = 0) => {
   const somethingValue = getRndInteger(0, countElements - 1);
   const rightAnswer = progression[somethingValue];
   progression[somethingValue] = '..';
-  const userAnswer = getMissedValue(progression);
+  const progressionInString = progression.join(' ');
+  const userAnswer = getMissedValue(progressionInString);
   const result = +userAnswer || userAnswer;
   if (result !== rightAnswer) {
     return console.log(`Your answer: ${userAnswer}\n'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`)
