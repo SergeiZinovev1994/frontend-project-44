@@ -1,8 +1,8 @@
-import { countRounds, getRndInteger, quest } from '../index.js';
+import { countRounds, getRndInteger, quest, randomNumber } from '../index.js';
 
 const gameCalc = (userName = 'Jho', count = 0) => {
-  const a = Math.ceil(Math.random() * 10);
-  const b = Math.ceil(Math.random() * 10);
+  const a = randomNumber(10);
+  const b = randomNumber(10);
   const operand = ['+', '*', '-'];
   const randomOperand = operand[getRndInteger(0, 2)];
   const express = `${a} ${randomOperand} ${b}`;

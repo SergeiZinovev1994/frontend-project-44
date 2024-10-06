@@ -1,12 +1,12 @@
-import { countRounds, quest } from '../index.js';
+import { countRounds, quest, randomNumber } from '../index.js';
 
 const prime = (userName, count = 0) => {
-  const randomNumber = Math.ceil(Math.random() * 100);
-  const userAnswer = quest(randomNumber);
+  const randomNum = randomNumber(10);
+  const userAnswer = quest(randomNum);
   let rightAnswer = 'yes';
   let i = 2;
-  while (i <= randomNumber / 2) {
-    if (randomNumber % i === 0) {
+  while (i <= randomNum / 2) {
+    if (randomNum % i === 0) {
       rightAnswer = 'no';
       break;
     }

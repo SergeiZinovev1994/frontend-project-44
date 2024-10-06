@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRndInteger, countRounds } from '../index.js';
+import { getRndInteger, countRounds, randomNumber } from '../index.js';
 
 const getMissedValue = (arr) => {
   const missedValue = readlineSync.question(`Question: ${arr} `);
@@ -11,8 +11,8 @@ const gameProgression = (userName, count = 0) => {
   const minEl = 5;
   const maxEl = 10;
   const countElements = getRndInteger(minEl, maxEl);
-  const valueForStep = Math.ceil(Math.random() * 10);
-  progression[0] = Math.ceil(Math.random() * 10);
+  const valueForStep = randomNumber(10);
+  progression[0] = randomNumber(10);
   for (let i = 1; i < countElements; i += 1) {
     progression[i] = progression[i - 1] + valueForStep;
   }

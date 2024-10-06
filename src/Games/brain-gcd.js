@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { countRounds } from '../index.js';
+import { countRounds, randomNumber } from '../index.js';
 
 const getDividsor = (a, b) => {
   const dividsor = readlineSync.question(`Question: ${a} ${b} `);
@@ -7,8 +7,8 @@ const getDividsor = (a, b) => {
 };
 
 const gameGCD = (userName, count = 0) => {
-  const numberA = Math.ceil(Math.random() * 10);
-  const numberB = Math.ceil(Math.random() * 10);
+  const numberA = randomNumber(10);
+  const numberB = randomNumber(10);
   const userAnswer = getDividsor(numberA, numberB);
   const resultUserAnswer = +userAnswer || userAnswer;
   const smallerNumber = numberA >= numberB ? numberB : numberA;

@@ -1,9 +1,9 @@
-import { countRounds, quest } from '../index.js';
+import { countRounds, quest, randomNumber } from '../index.js';
 
 const gameEven = (userName = 'Jho', count = 0) => {
-  const randomNumber = Math.round((Math.random() * 1000));
-  const userAnswer = quest(randomNumber);
-  const rightAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+  const randomNum = randomNumber(100);
+  const userAnswer = quest(randomNum);
+  const rightAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
 
   if (userAnswer !== rightAnswer) {
     return console.log(`Your answer : ${userAnswer}\n'${userAnswer}' is wrong answer ;/(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
