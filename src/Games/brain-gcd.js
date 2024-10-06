@@ -7,9 +7,9 @@ const getDividsor = (a, b) => {
 };
 
 const gameGCD = (userName, count = 0) => {
-  const maxNumber = 15;
-  const numberA = randomNumber(maxNumber);
-  const numberB = randomNumber(maxNumber);
+  const maxGCDNumber = 15;
+  const numberA = randomNumber(maxGCDNumber);
+  const numberB = randomNumber(maxGCDNumber);
   const userAnswer = getDividsor(numberA, numberB);
   const resultUserAnswer = +userAnswer || userAnswer;
   const smallerNumber = numberA >= numberB ? numberB : numberA;

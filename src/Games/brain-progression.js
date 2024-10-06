@@ -11,9 +11,10 @@ const gameProgression = (userName, count = 0) => {
   const minEl = 5;
   const maxEl = 10;
   const countElements = getRndInteger(minEl, maxEl);
-  const maxNumber = 20;
-  const valueForStep = randomNumber(maxNumber);
-  progression[0] = randomNumber(maxNumber);
+  const maxFirstNumber = 10;
+  const maxStepNumber = 20;
+  const valueForStep = randomNumber(maxFirstNumber);
+  progression[0] = randomNumber(maxStepNumber);
   for (let i = 1; i < countElements; i += 1) {
     progression[i] = progression[i - 1] + valueForStep;
   }
