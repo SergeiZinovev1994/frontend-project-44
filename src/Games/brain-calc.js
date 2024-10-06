@@ -1,4 +1,9 @@
-import { countRounds, getRndInteger, quest, randomNumber } from '../index.js';
+import {
+  countRounds,
+  getRndInteger,
+  quest,
+  randomNumber,
+} from '../index.js';
 
 const gameCalc = (userName = 'Jho', count = 0) => {
   const a = randomNumber(10);
