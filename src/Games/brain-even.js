@@ -12,6 +12,7 @@ const gameEven = (userName = 'Jho', count = 0) => {
   if (count >= countRounds - 1) {
     return console.log(`Congratulations, ${userName}!`);
   }
-  return gameEven(userName, count += 1);
+  const newCount = count + 1;
+  return gameEven(userName, newCount);
 };
 export default gameEven;
