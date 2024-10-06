@@ -6,8 +6,9 @@ import {
 } from '../index.js';
 
 const gameCalc = (userName = 'Jho', count = 0) => {
-  const a = randomNumber(10);
-  const b = randomNumber(10);
+  const maxNumber = 10;
+  const a = randomNumber(maxNumber);
+  const b = randomNumber(maxNumber);
   const operand = ['+', '*', '-'];
   const randomOperand = operand[getRndInteger(0, 2)];
   const express = `${a} ${randomOperand} ${b}`;

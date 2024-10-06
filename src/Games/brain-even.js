@@ -1,7 +1,8 @@
 import { countRounds, quest, randomNumber } from '../index.js';
 
 const gameEven = (userName = 'Jho', count = 0) => {
-  const randomNum = randomNumber(100);
+  const maxNumber = 100;
+  const randomNum = randomNumber(maxNumber);
   const userAnswer = quest(randomNum);
   const rightAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
 

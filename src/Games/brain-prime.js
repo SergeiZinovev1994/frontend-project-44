@@ -1,7 +1,8 @@
 import { countRounds, quest, randomNumber } from '../index.js';
 
 const prime = (userName, count = 0) => {
-  const randomNum = randomNumber(100);
+  const maxNumber = 99;
+  const randomNum = randomNumber(maxNumber);
   const userAnswer = quest(randomNum);
   let rightAnswer = 'yes';
   let i = 2;
