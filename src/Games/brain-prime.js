@@ -5,6 +5,9 @@ const prime = (userName, count = 0) => {
   const userAnswer = quest(randomNum);
   let rightAnswer = 'yes';
   let i = 2;
+  if (randomNum === 1) {
+    rightAnswer = 'no';
+  }
   while (i <= randomNum / 2) {
     if (randomNum % i === 0) {
       rightAnswer = 'no';
