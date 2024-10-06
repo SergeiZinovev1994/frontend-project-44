@@ -7,12 +7,11 @@ const gameEven = (userName = 'Jho', count = 0) => {
 
   if (userAnswer !== rightAnswer) {
     return console.log(`Your answer : ${userAnswer}\n'${userAnswer}' is wrong answer ;/(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
-  } else {
-    console.log(`Your answer : ${userAnswer}\nCorrect!`);
-    if (count >= countRounds - 1) {
-      return console.log(`Congratulations, ${userName}!`);
-    }
-    return gameEven(userName, count += 1);
   }
+  console.log(`Your answer : ${userAnswer}\nCorrect!`);
+  if (count >= countRounds - 1) {
+    return console.log(`Congratulations, ${userName}!`);
+  }
+  return gameEven(userName, count += 1);
 };
 export default gameEven;

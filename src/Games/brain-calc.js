@@ -26,12 +26,11 @@ const gameCalc = (userName = 'Jho', count = 0) => {
   }
   if (valueExpress(a, randomOperand, b) !== result) {
     return console.log(`Your answer: ${result}\n'${result}' is wrong answer ;(. Correct answer was '${valueExpress(a, randomOperand, b)}'.\nLet's try again, ${userName}!`);
-  } else {
-    console.log(`Your answer : ${userAnswer}\nCorrect!`);
-    if (count >= countRounds - 1) {
-      return console.log(`Congratulations, ${userName}!`);
-    }
-    return gameCalc(userName, count += 1);
   }
+  console.log(`Your answer : ${userAnswer}\nCorrect!`);
+  if (count >= countRounds - 1) {
+    return console.log(`Congratulations, ${userName}!`);
+  }
+  return gameCalc(userName, count += 1);
 };
 export default gameCalc;
