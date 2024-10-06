@@ -1,7 +1,4 @@
 import readlineSync from 'readline-sync';
 
-const question = (string) => {
-  const question = readlineSync.question(`${string} `);
-  return question;
-};
+const question = (string) => readlineSync.question(`${string} `);
 export default question;

@@ -10,11 +10,11 @@ const gameCalc = (userName = 'Jho', count = 0) => {
     let result = 0;
     switch (mathSign) {
       case '+': result = val1 + val2;
-      break;
+        break;
       case '-': result = val1 - val2;
-      break;
+        break;
       case '*': result = val1 * val2;
-      break;
+        break;
       default: result = 0;
     }
     return result;

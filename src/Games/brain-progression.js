@@ -8,8 +8,8 @@ const getMissedValue = (arr) => {
 
 const gameProgression = (userName, count = 0) => {
   const progression = [];
-  const minEl = 10;
-  const maxEl = 15;
+  const minEl = 5;
+  const maxEl = 10;
   const countElements = getRndInteger(minEl, maxEl);
   const valueForStep = Math.ceil(Math.random() * 10);
   progression[0] = Math.ceil(Math.random() * 10);

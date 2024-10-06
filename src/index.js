@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+
 export const quest = (number) => {
   const question = readlineSync.question(`Question: ${number} `);
   return question;
