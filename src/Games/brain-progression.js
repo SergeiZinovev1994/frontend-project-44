@@ -29,6 +29,7 @@ const gameProgression = (userName, count = 0) => {
   if (count >= countRounds - 1) {
     return console.log(`Congratulations, ${userName}!`);
   }
-  return gameProgression(userName, count += 1);
+  const newCount = count + 1;
+  return gameProgression(userName, newCount);
 };
 export default gameProgression;

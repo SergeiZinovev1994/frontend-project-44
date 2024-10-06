@@ -25,6 +25,7 @@ const gameGCD = (userName, count = 0) => {
   if (count >= countRounds - 1) {
     return console.log(`Congratulations, ${userName}!`);
   }
-  return gameGCD(userName, count += 1);
+  const newCount = count + 1;
+  return gameGCD(userName, newCount);
 };
 export default gameGCD;

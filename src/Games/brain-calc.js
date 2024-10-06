@@ -31,6 +31,7 @@ const gameCalc = (userName = 'Jho', count = 0) => {
   if (count >= countRounds - 1) {
     return console.log(`Congratulations, ${userName}!`);
   }
-  gameCalc(userName, count += 1);
+  const newCount = count + 1;
+  return gameCalc(userName, newCount);
 };
 export default gameCalc;

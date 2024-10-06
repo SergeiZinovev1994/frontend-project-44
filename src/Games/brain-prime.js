@@ -19,6 +19,7 @@ const prime = (userName, count = 0) => {
   if (count >= countRounds - 1) {
     return console.log(`Congratulations, ${userName}!`);
   }
-  return prime(userName, count += 1);
+  const newCount = count + 1;
+  return prime(userName, newCount);
 };
 export default prime;
