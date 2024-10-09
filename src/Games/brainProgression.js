@@ -1,19 +1,23 @@
 import readlineSync from 'readline-sync';
-import { getRndInteger, countRounds, randomNumber } from '../index.js';
+import { getRndInteger, countRounds, welcome } from '../index.js';
 
 const getMissedValue = (arr) => {
   const missedValue = readlineSync.question(`Question: ${arr} `);
   return missedValue;
 };
 
-const gameProgression = (userName, count = 0) => {
+const gameProgression = (userName = 'Jho', count = 0) => {
+  if (count === 0) {
+    userName = welcome();
+    console.log('What number is missing in the progression?');
+  }
   const progression = [];
   const minEl = 5;
   const maxEl = 10;
   const countElements = getRndInteger(minEl, maxEl);
   const maxNumber = 20;
-  const valueForStep = randomNumber(maxNumber);
-  progression[0] = randomNumber(maxNumber);
+  const valueForStep = getRndInteger(0, maxNumber);
+  progression[0] = getRndInteger(0, maxNumber);
   for (let i = 1; i < countElements; i += 1) {
     progression[i] = progression[i - 1] + valueForStep;
   }
