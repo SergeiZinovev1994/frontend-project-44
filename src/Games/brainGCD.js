@@ -1,15 +1,19 @@
 import readlineSync from 'readline-sync';
-import { countRounds, randomNumber } from '../index.js';
+import { countRounds, getRndInteger, welcome } from '../index.js';
 
 const getDividsor = (a, b) => {
   const dividsor = readlineSync.question(`Question: ${a} ${b} `);
   return dividsor;
 };
 
-const gameGCD = (userName, count = 0) => {
+const gameGCD = (userName = 'Jho', count = 0) => {
+  if (count === 0) {
+    userName = welcome();
+    console.log('Find the greatest common divisor of given numbers.');
+  }
   const maxNumber = 15;
-  const numberA = randomNumber(maxNumber);
-  const numberB = randomNumber(maxNumber);
+  const numberA = getRndInteger(0, maxNumber);
+  const numberB = getRndInteger(0, maxNumber);
   const userAnswer = getDividsor(numberA, numberB);
   const resultUserAnswer = +userAnswer || userAnswer;
   const smallerNumber = numberA >= numberB ? numberB : numberA;
