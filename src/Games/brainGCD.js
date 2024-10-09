@@ -11,9 +11,10 @@ const gameGCD = (userName = 'Jho', count = 0) => {
     userName = welcome();
     console.log('Find the greatest common divisor of given numbers.');
   }
+  const minNumber = 1;
   const maxNumber = 15;
-  const numberA = getRndInteger(0, maxNumber);
-  const numberB = getRndInteger(0, maxNumber);
+  let numberA = getRndInteger(minNumber, maxNumber);
+  let numberB = getRndInteger(minNumber, maxNumber);
   const userAnswer = getDividsor(numberA, numberB);
   const resultUserAnswer = +userAnswer || userAnswer;
   const smallerNumber = numberA >= numberB ? numberB : numberA;
