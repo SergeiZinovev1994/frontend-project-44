@@ -14,7 +14,9 @@ const gameCalc = (userName = 'Jho', count = 0) => {
   const a = getRndInteger(0, maxNumber);
   const b = getRndInteger(0, maxNumber);
   const operand = ['+', '*', '-'];
-  const randomOperand = operand[getRndInteger(0, 2)];
+  const minIndexOfOperand = 0;
+  const maxIndexOfOperand = operand.length - 1;
+  const randomOperand = operand[getRndInteger(minIndexOfOperand, maxIndexOfOperand)];
   const express = `${a} ${randomOperand} ${b}`;
   const startValueExpress = (val1, mathSign, val2) => {
     let result = 0;
