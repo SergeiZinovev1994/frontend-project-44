@@ -1,8 +1,12 @@
-import { countRounds, quest, randomNumber } from '../index.js';
+import { countRounds, quest, getRndInteger, welcome } from '../index.js';
 
-const prime = (userName, count = 0) => {
+const prime = (userName = 'Jho', count = 0) => {
+  if (count === 0) {
+    userName = welcome();
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  }
   const maxNumber = 99;
-  const randomNum = randomNumber(maxNumber);
+  const randomNum = getRndInteger(0, maxNumber);
   const userAnswer = quest(randomNum);
   let rightAnswer = 'yes';
   let i = 2;
