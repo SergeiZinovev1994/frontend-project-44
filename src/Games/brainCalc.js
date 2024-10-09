@@ -16,7 +16,7 @@ const gameCalc = (userName = 'Jho', count = 0) => {
   const operand = ['+', '*', '-'];
   const randomOperand = operand[getRndInteger(0, 2)];
   const express = `${a} ${randomOperand} ${b}`;
-  const valueExpress = (val1, mathSign, val2) => {
+  const startValueExpress = (val1, mathSign, val2) => {
     let result = 0;
     switch (mathSign) {
       case '+': result = val1 + val2;
@@ -34,8 +34,8 @@ const gameCalc = (userName = 'Jho', count = 0) => {
   if (userAnswer === '0') {
     result = 0;
   }
-  if (valueExpress(a, randomOperand, b) !== result) {
-    return console.log(`Your answer: ${result}\n'${result}' is wrong answer ;(. Correct answer was '${valueExpress(a, randomOperand, b)}'.\nLet's try again, ${userName}!`);
+  if (startValueExpress(a, randomOperand, b) !== result) {
+    return console.log(`Your answer: ${result}\n'${result}' is wrong answer ;(. Correct answer was '${startValueExpress(a, randomOperand, b)}'.\nLet's try again, ${userName}!`);
   }
   console.log(`Your answer : ${userAnswer}\nCorrect!`);
   if (count >= countRounds - 1) {
