@@ -2,13 +2,17 @@ import {
   countRounds,
   getRndInteger,
   quest,
-  randomNumber,
+  welcome,
 } from '../index.js';
 
 const gameCalc = (userName = 'Jho', count = 0) => {
+  if (count === 0) {
+    userName = welcome();
+    console.log('What is the result of the expression?');
+  }
   const maxNumber = 10;
-  const a = randomNumber(maxNumber);
-  const b = randomNumber(maxNumber);
+  const a = getRndInteger(0, maxNumber);
+  const b = getRndInteger(0, maxNumber);
   const operand = ['+', '*', '-'];
   const randomOperand = operand[getRndInteger(0, 2)];
   const express = `${a} ${randomOperand} ${b}`;
