@@ -1,8 +1,12 @@
-import { countRounds, quest, randomNumber } from '../index.js';
+import { countRounds, quest, welcome, getRndInteger } from '../index.js';
 
 const gameEven = (userName = 'Jho', count = 0) => {
+  if (count === 0) {
+    userName = welcome();
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  }
   const maxNumber = 100;
-  const randomNum = randomNumber(maxNumber);
+  const randomNum = getRndInteger(0, maxNumber);
   const userAnswer = quest(randomNum);
   const rightAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
 
