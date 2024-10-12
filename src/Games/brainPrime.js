@@ -1,22 +1,20 @@
-import { gameCore, getRndInteger, welcome } from '../index.js';
+import { gameCore, welcome } from '../index.js';
+import getRandomNumber from '../utils.js'
 
 const game = () => {
-  const maxNumber = 99;
+  const maxNumber = 100;
   const minNumber = 1;
-  const randomNum = getRndInteger(minNumber, maxNumber);
-  let rightAnswer = 'yes';
+  const randomNum = getRandomNumber(minNumber, maxNumber);
+  let isPrime = randomNum === 1 ? 'no' :'yes';
   let i = 2;
-  if (randomNum === 1) {
-    rightAnswer = 'no';
-  }
   while (i <= randomNum / 2) {
     if (randomNum % i === 0) {
-      rightAnswer = 'no';
+      isPrime = 'no';
       break;
     }
     i += 1;
   }
-  return [randomNum, rightAnswer];
+  return [randomNum, isPrime];
 };
 
 const gamePrime = () => {
