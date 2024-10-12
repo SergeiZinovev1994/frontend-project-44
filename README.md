@@ -21,4 +21,5 @@ The game goes up to three correct answers. If you answer correctly 3 times, you 
 
 You can watch the video of the mini-games using the links below.
 
-**Video of the program "Brain-games"**: https://asciinema.org/a/7Qs3oA2IuWF0awjbNF7p3Bbss
+## Video of the program "Brain-games":
+**brain-games:** [![asciicast](https://asciinema.org/a/T2h3F1MHE17ghHSpO9UVwOwzv.svg)](https://asciinema.org/a/T2h3F1MHE17ghHSpO9UVwOwzv)
