@@ -1,18 +1,14 @@
-import { gameCore, getRndInteger, welcome } from '../index.js';
+import { gameCore, welcome } from '../index.js';
+import getRandomNumber from '../utils.js';
+import searchDividsor from '../searchDividsor.js';
 
 const game = () => {
   const minNumber = 1;
   const maxNumber = 15;
-  const numberA = getRndInteger(minNumber, maxNumber);
-  const numberB = getRndInteger(minNumber, maxNumber);
+  const numberA = getRandomNumber(minNumber, maxNumber);
+  const numberB = getRandomNumber(minNumber, maxNumber);
   const twoNumbers = `${numberA} ${numberB}`;
-  const smallerNumber = numberA >= numberB ? numberB : numberA;
-  let dividsor = 1;
-  for (let i = 2; i <= smallerNumber; i += 1) {
-    if (numberA % i === 0 && numberB % i === 0) {
-      dividsor = i;
-    }
-  }
+  const dividsor = searchDividsor(numberA, numberB);
   return [twoNumbers, dividsor];
 };
   
