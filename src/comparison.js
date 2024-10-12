@@ -3,6 +3,5 @@ export default (userAnswer, rightValue) => {
   if (userAnswer === '0') {
     processedAnswer = 0;
   }
-  const result = processedAnswer !== rightValue ? false : true;
-  return result;
+  return processedAnswer === rightValue;
 };
