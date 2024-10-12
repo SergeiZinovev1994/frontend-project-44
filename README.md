@@ -23,3 +23,5 @@ You can watch the video of the mini-games using the links below.
 
 ## Video of the program "Brain-games":
 **brain-games:** [![asciicast](https://asciinema.org/a/T2h3F1MHE17ghHSpO9UVwOwzv.svg)](https://asciinema.org/a/T2h3F1MHE17ghHSpO9UVwOwzv)
+
+**brain-calc:** <script src="https://asciinema.org/a/WdNd3EouzjTejJ42JkjHY4cLQ.js" id="asciicast-WdNd3EouzjTejJ42JkjHY4cLQ" async="true"></script>
