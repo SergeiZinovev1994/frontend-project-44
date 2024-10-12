@@ -24,4 +24,12 @@ You can watch the video of the mini-games using the links below.
 ## Video of the program "Brain-games":
 **brain-games:** [![asciicast](https://asciinema.org/a/T2h3F1MHE17ghHSpO9UVwOwzv.svg)](https://asciinema.org/a/T2h3F1MHE17ghHSpO9UVwOwzv)
 
-**brain-calc:** <script src="https://asciinema.org/a/WdNd3EouzjTejJ42JkjHY4cLQ.js" id="asciicast-WdNd3EouzjTejJ42JkjHY4cLQ" async="true"></script>
+**brain-calc:** [![asciicast](https://asciinema.org/a/WdNd3EouzjTejJ42JkjHY4cLQ.svg)](https://asciinema.org/a/WdNd3EouzjTejJ42JkjHY4cLQ)
+
+**brain-even:** [![asciicast](https://asciinema.org/a/lWlgXyGChAcs4KVBnr72Bz61H.svg)](https://asciinema.org/a/lWlgXyGChAcs4KVBnr72Bz61H)
+
+**brain-gcd:** [![asciicast](https://asciinema.org/a/haI0LTylcg3qcloDI7kF6UjOr.svg)](https://asciinema.org/a/haI0LTylcg3qcloDI7kF6UjOr)
+
+**brain-prime:** [![asciicast](https://asciinema.org/a/ucEbRsukLL1YDoUN3w8Q8sziG.svg)](https://asciinema.org/a/ucEbRsukLL1YDoUN3w8Q8sziG)
+
+**brain-progression:** [![asciicast](https://asciinema.org/a/DtoOyTErE6nTWcHn6nKpEOkf4.svg)](https://asciinema.org/a/DtoOyTErE6nTWcHn6nKpEOkf4)
