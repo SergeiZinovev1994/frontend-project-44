@@ -11,7 +11,8 @@ const game = () => {
   const somethingIndex = getRandomNumber(0, progression.length - 1);
   const rightAnswer = progression[somethingIndex];
   progression[somethingIndex] = '..';
-  return [progression, rightAnswer];
+  const stringProgression = progression.join(' ');
+  return [stringProgression, rightAnswer];
 };
 
 const gameProgression = () => {
