@@ -42,5 +42,6 @@ const game = () => {
 
 export const gameCalc = () => {
   const user = welcome();
+  console.log('What is the result of the expression?');
   return gameCore(game, user);
 }
