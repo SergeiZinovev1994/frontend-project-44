@@ -1,20 +1,12 @@
 import getRandomNumber from './utils.js';
 
-const addProgression =
-(minCountEl,
-maxCountEl,
-minValueStep = 1,
-maxValueStep = 10,
-minValueFirstEl = 0,
-maxValueFirstEl = 10) => {
+export default (minNumEl, maxNumEl, minStep = 1, maxStep = 10, minFirstEl = 0, maxFirstEl = 10) => {
   const progression = [];
-  const countElements = getRandomNumber(minCountEl, maxCountEl);
-  const valueForStep = getRandomNumber(minValueStep, maxValueStep);
-  progression[0] = getRandomNumber(minValueFirstEl, maxValueFirstEl);
+  const countElements = getRandomNumber(minNumEl, maxNumEl);
+  const valueForStep = getRandomNumber(minStep, maxStep);
+  progression[0] = getRandomNumber(minFirstEl, maxFirstEl);
   for (let i = 1; i < countElements; i += 1) {
     progression[i] = progression[i - 1] + valueForStep;
   }
   return progression;
 };
-
-export default addProgression;
