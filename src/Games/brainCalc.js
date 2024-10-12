@@ -1,17 +1,15 @@
-import {
-  getRndInteger,
-  welcome,
-  gameCore,
-} from '../index.js';
+import { welcome, gameCore} from '../index.js';
+import getRandomNumber from '../utils.js'
 
 const expression = () => {
   const maxNumber = 10;
-  const a = getRndInteger(0, maxNumber);
-  const b = getRndInteger(0, maxNumber);
+  const minNumber = 0;
+  const a = getRandomNumber(minNumber, maxNumber);
+  const b = getRandomNumber(minNumber, maxNumber);
   const operand = ['+', '*', '-'];
   const minIndexOfOperand = 0;
   const maxIndexOfOperand = operand.length - 1;
-  const randomOperand = operand[getRndInteger(minIndexOfOperand, maxIndexOfOperand)];
+  const randomOperand = operand[getRandomNumber(minIndexOfOperand, maxIndexOfOperand)];
   const result = `${a} ${randomOperand} ${b}`;
   return result;
 };
@@ -29,7 +27,7 @@ const startValueExpress = (express) => {
       break;
     case '*': result = num1 * num2;
       break;
-    default: result = 0;
+    default: throw new Error(`Unknown order state: '${express}'!`);
   }
   return result;
 }
