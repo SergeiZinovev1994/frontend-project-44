@@ -1,9 +1,12 @@
-import { gameCore, welcome, getRndInteger } from '../index.js';
+import { gameCore, welcome } from '../index.js';
+import getRandomNumber from '../utils.js'
 
 const game = () => {
   const maxNumber = 100;
-  const randomNum = getRndInteger(0, maxNumber);
+  const minNumber = 1;
+  const randomNum = getRandomNumber(minNumber, maxNumber);
   const rightAnswer = randomNum % 2 === 0 ? 'yes' : 'no';
+  
   return [randomNum, rightAnswer];
 }
 
