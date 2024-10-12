@@ -17,12 +17,13 @@ export const gameCore = (fn, userName) => {
     console.log(`Your answer: ${userAnswer}`);
     const isTrue = isRight(userAnswer, rightAnswer);
     if (isTrue === false) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
+      return;
     }
     console.log('Correct!');
     if (i === countRounds) {
-      return console.log(`Congratulations, ${userName}!`);
+      console.log(`Congratulations, ${userName}!`);
+      return;
     }
   }
-  return;
 };
