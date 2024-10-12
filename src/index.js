@@ -1,10 +1,5 @@
 import readlineSync from 'readline-sync';
 
-export const quest = (number) => {
-  const question = readlineSync.question(`Question: ${number} `);
-  return question;
-};
-
 export const welcome = () => {
   console.log('Welcome to the Brain Games!');
   const user = readlineSync.question('May I have your name? ');
@@ -13,6 +8,7 @@ export const welcome = () => {
 }
 
 export const getRndInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 export const countRounds = 3;
 
 export const gameTry = (userAnswer, rightValue) => {
@@ -23,6 +19,18 @@ export const gameTry = (userAnswer, rightValue) => {
   return processedAnswer !== rightValue ? false : true;
 }
 
-export const gameOver = (userName, answer, exactResult) => console.log(`Your answer: ${answer}\n'${answer}' is wrong answer ;(. Correct answer was '${exactResult}'.\nLet's try again, ${userName}!`);
-
-export const victory = (userName, answer, exactResult) => console.log(`Congratulations, ${userName}!`);
+export const gameCore = (fn, userName) => {
+  for (let i = 1; i <= countRounds; i += 1) {
+    const [exp, rightAnswer] = fn();
+    const userAnswer = readlineSync.question(`Question: ${exp}: `);
+    console.log(`Your answer: ${userAnswer}`);
+    const isTrue = gameTry(userAnswer, rightAnswer);
+    if (isTrue === false) {
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`)
+    }
+    console.log('Correct!');
+    if (i === countRounds) {
+      return console.log(`Congratulations, ${userName}!`);
+    }
+  }
+}
