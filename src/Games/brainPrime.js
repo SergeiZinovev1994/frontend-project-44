@@ -1,13 +1,9 @@
-import { countRounds, quest, getRndInteger, welcome } from '../index.js';
+import { gameCore, getRndInteger, welcome } from '../index.js';
 
-const prime = (userName = 'Jho', count = 0) => {
-  if (count === 0) {
-    userName = welcome();
-    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  }
+const game = () => {
   const maxNumber = 99;
-  const randomNum = getRndInteger(0, maxNumber);
-  const userAnswer = quest(randomNum);
+  const minNumber = 1;
+  const randomNum = getRndInteger(minNumber, maxNumber);
   let rightAnswer = 'yes';
   let i = 2;
   if (randomNum === 1) {
@@ -20,14 +16,12 @@ const prime = (userName = 'Jho', count = 0) => {
     }
     i += 1;
   }
-  if (userAnswer !== rightAnswer) {
-    return console.log(`Your answer: ${userAnswer}\n'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
-  }
-  console.log(`Your answer: ${userAnswer}\nCorrect!`);
-  if (count >= countRounds - 1) {
-    return console.log(`Congratulations, ${userName}!`);
-  }
-  const newCount = count + 1;
-  return prime(userName, newCount);
+  return [randomNum, rightAnswer];
 };
-export default prime;
+
+const gamePrime = () => {
+  const userName = welcome();
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  gameCore(game, userName);
+}
+export default gamePrime;
