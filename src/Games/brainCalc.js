@@ -1,5 +1,5 @@
-import { welcome, gameCore} from '../index.js';
-import getRandomNumber from '../utils.js'
+import { welcome, gameCore } from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const expression = () => {
   const maxNumber = 10;
@@ -30,7 +30,7 @@ const startValueExpress = (express) => {
     default: throw new Error(`Unknown order state: '${express}'!`);
   }
   return result;
-}
+};
 
 const game = () => {
   const exp = expression();
@@ -38,8 +38,10 @@ const game = () => {
   return [exp, rightAnswer];
 };
 
-export const gameCalc = () => {
+const gameCalc = () => {
   const user = welcome();
   console.log('What is the result of the expression?');
   return gameCore(game, user);
-}
+};
+
+export default gameCalc;

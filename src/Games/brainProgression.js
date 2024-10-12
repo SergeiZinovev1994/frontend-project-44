@@ -19,5 +19,5 @@ const gameProgression = () => {
   const userName = welcome();
   console.log('What number is missing in the progression?');
   gameCore(game, userName);
-}
+};
 export default gameProgression;

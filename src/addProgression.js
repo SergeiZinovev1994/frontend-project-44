@@ -1,6 +1,12 @@
 import getRandomNumber from './utils.js';
 
-const addProgression = (minCountEl, maxCountEl, minValueStep = 1, maxValueStep = 10, minValueFirstEl = 0, maxValueFirstEl = 10,) => {
+const addProgression =
+(minCountEl,
+maxCountEl,
+minValueStep = 1,
+maxValueStep = 10,
+minValueFirstEl = 0,
+maxValueFirstEl = 10) => {
   const progression = [];
   const countElements = getRandomNumber(minCountEl, maxCountEl);
   const valueForStep = getRandomNumber(minValueStep, maxValueStep);

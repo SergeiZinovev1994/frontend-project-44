@@ -11,7 +11,7 @@ const game = () => {
   const dividsor = searchDividsor(numberA, numberB);
   return [twoNumbers, dividsor];
 };
-  
+
 const gameGCD = () => {
   const userName = welcome();
   console.log('Find the greatest common divisor of given numbers.');
