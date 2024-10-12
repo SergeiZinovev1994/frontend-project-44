@@ -1,11 +1,7 @@
 import {
-  gameOver,
   getRndInteger,
-  quest,
   welcome,
-  victory,
-  countRounds,
-  gameTry
+  gameCore,
 } from '../index.js';
 
 const expression = () => {
@@ -38,24 +34,13 @@ const startValueExpress = (express) => {
   return result;
 }
 
-const gameCalc = (userName = 'Jho', count = 0) => {
-  if (count === 0) {
-    userName = welcome();
-    console.log('What is the result of the expression?');
-  }
-  while (count <= (countRounds - 1)) {
-    const express = expression();
-    const userAnswer = quest(express);
-    const rightAnswer = startValueExpress(express);
-    let switcher = gameTry(userAnswer, rightAnswer);
-    if (!switcher) {
-      return gameOver(userName, userAnswer, rightAnswer);
-    }
-    console.log(`Your answer : ${userAnswer}\nCorrect!`);
-    count += 1;
-    if (count === 3) {
-      return victory(userName, userAnswer, rightAnswer);
-    }
-  }
+const game = () => {
+  const exp = expression();
+  const rightAnswer = startValueExpress(exp);
+  return [exp, rightAnswer];
+};
+
+export const gameCalc = () => {
+  const user = welcome();
+  return gameCore(game, user);
 }
-export default gameCalc;
