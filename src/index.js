@@ -14,7 +14,7 @@ export const gameCore = (fn, userName) => {
   for (let i = 1; i <= countRounds; i += 1) {
     const [exp, rightAnswer] = fn();
     console.log(`Question: ${exp}`);
-    const userAnswer = readlineSync.question(`Your answer: `);
+    const userAnswer = readlineSync.question('Your answer: ');
     const isTrue = isRight(userAnswer, rightAnswer);
     if (isTrue === false) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
