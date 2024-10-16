@@ -1,21 +1,29 @@
-import { gameCore, welcome } from '../index.js';
+import { gameCore } from '../index.js';
 import getRandomNumber from '../utils.js';
-import searchDividsor from '../searchDividsor.js';
+
+const task = 'Find the greatest common divisor of given numbers.';
+
+const searchDividsor = (num1, num2) => {
+  const smallerNumber = num1 >= num2 ? num2 : num1;
+  let dividsor = 1;
+  for (let i = 2; i <= smallerNumber; i += 1) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      dividsor = i;
+    }
+  }
+  return dividsor;
+};
 
 const game = () => {
-  const minNumber = 1;
-  const maxNumber = 15;
-  const numberA = getRandomNumber(minNumber, maxNumber);
-  const numberB = getRandomNumber(minNumber, maxNumber);
-  const twoNumbers = `${numberA} ${numberB}`;
+  const numberA = getRandomNumber(1, 15);
+  const numberB = getRandomNumber(1, 15);
+  const gcdNumbers = `${numberA} ${numberB}`;
   const dividsor = searchDividsor(numberA, numberB);
-  return [twoNumbers, dividsor];
+  return [gcdNumbers, dividsor];
 };
 
-const gameGCD = () => {
-  const userName = welcome();
-  console.log('Find the greatest common divisor of given numbers.');
-  gameCore(game, userName);
+const runGameGCD = () => {
+  gameCore(game, task);
 };
 
-export default gameGCD;
+export default runGameGCD;
