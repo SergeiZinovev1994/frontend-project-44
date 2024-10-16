@@ -1,25 +1,29 @@
-import { gameCore, welcome } from '../index.js';
+import { gameCore } from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const game = () => {
-  const maxNumber = 100;
-  const minNumber = 1;
-  const randomNum = getRandomNumber(minNumber, maxNumber);
-  let isPrime = randomNum === 1 ? 'no' : 'yes';
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+
+const isPrime = (number) => {
+  let result = number !== 1;
   let i = 2;
-  while (i <= randomNum / 2) {
-    if (randomNum % i === 0) {
-      isPrime = 'no';
+  while (i <= number / 2) {
+    if (number % i === 0) {
+      result = false;
       break;
     }
     i += 1;
   }
-  return [randomNum, isPrime];
+  return result;
 };
 
-const gamePrime = () => {
-  const userName = welcome();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  gameCore(game, userName);
+const game = () => {
+  const randomNum = getRandomNumber(1, 100);
+  const answer = isPrime(randomNum) ? 'yes' : 'no';
+  return [randomNum, answer];
 };
-export default gamePrime;
+
+const runGamePrime = () => {
+  gameCore(game, task);
+};
+export default runGamePrime;
