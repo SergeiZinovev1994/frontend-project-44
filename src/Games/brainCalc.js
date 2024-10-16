@@ -6,11 +6,11 @@ const expression = () => {
   const minNumber = 0;
   const a = getRandomNumber(minNumber, maxNumber);
   const b = getRandomNumber(minNumber, maxNumber);
-  const operand = ['+', '*', '-'];
-  const minIndexOfOperand = 0;
-  const maxIndexOfOperand = operand.length - 1;
-  const randomOperand = operand[getRandomNumber(minIndexOfOperand, maxIndexOfOperand)];
-  const result = `${a} ${randomOperand} ${b}`;
+  const operator = ['+', '*', '-'];
+  const minIndexOfOperator = 0;
+  const maxIndexOfOperator = operator.length - 1;
+  const randomOperator = operator[getRandomNumber(minIndexOfOperator, maxIndexOfOperator)];
+  const result = `${a} ${randomOperator} ${b}`;
   return result;
 };
 
