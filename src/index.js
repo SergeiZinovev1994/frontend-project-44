@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import isRight from './comparison.js';
 
 export const welcome = () => {
   console.log('Welcome to the Brain Games!');
@@ -8,22 +7,23 @@ export const welcome = () => {
   return user;
 };
 
-export const countRounds = 3;
+const countRounds = 3;
 
-export const gameCore = (fn, userName) => {
+export const gameCore = (getDataGame, taskText) => {
+  console.log('Welcome to the Brain Games!');
+  const user = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${user}!`);
+  console.log(taskText);
   for (let i = 1; i <= countRounds; i += 1) {
-    const [exp, rightAnswer] = fn();
+    const [exp, rightAnswer] = getDataGame();
     console.log(`Question: ${exp}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const isTrue = isRight(userAnswer, rightAnswer);
-    if (isTrue === false) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
+    if (userAnswer !== rightAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+      console.log(`Let's try again, ${user}!`);
       return;
     }
     console.log('Correct!');
-    if (i === countRounds) {
-      console.log(`Congratulations, ${userName}!`);
-      return;
-    }
   }
+  console.log(`Congratulations, ${user}!`);
 };
