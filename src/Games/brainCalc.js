@@ -4,13 +4,13 @@ import getRandomNumber from '../utils.js';
 const expression = () => {
   const maxNumber = 10;
   const minNumber = 0;
-  const a = getRandomNumber(minNumber, maxNumber);
-  const b = getRandomNumber(minNumber, maxNumber);
+  const number1 = getRandomNumber(minNumber, maxNumber);
+  const number2 = getRandomNumber(minNumber, maxNumber);
   const operator = ['+', '*', '-'];
   const minIndexOfOperator = 0;
   const maxIndexOfOperator = operator.length - 1;
   const randomOperator = operator[getRandomNumber(minIndexOfOperator, maxIndexOfOperator)];
-  const result = `${a} ${randomOperator} ${b}`;
+  const result = `${number1} ${randomOperator} ${number2}`;
   return result;
 };
 
@@ -38,10 +38,10 @@ const game = () => {
   return [exp, rightAnswer];
 };
 
-const gameCalc = () => {
+const runGameCalc = () => {
   const user = welcome();
   console.log('What is the result of the expression?');
   return gameCore(game, user);
 };
 
-export default gameCalc;
+export default runGameCalc;
