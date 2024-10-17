@@ -22,7 +22,7 @@ const game = () => {
   const answer = progression[indexOfRandomElement];
   progression[indexOfRandomElement] = '..';
   const progressionStringWithGap = progression.join(' ');
-  return [progressionStringWithGap, answer];
+  return [progressionStringWithGap, answer.toString()];
 };
 
 const runGameProgression = () => {
