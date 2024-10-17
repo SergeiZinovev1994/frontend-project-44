@@ -3,7 +3,7 @@ import getRandomNumber from '../utils.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-const searchDividsor = (num1, num2) => {
+const searchDivisor = (num1, num2) => {
   const smallerNumber = num1 >= num2 ? num2 : num1;
   let divisor = 1;
   for (let i = 2; i <= smallerNumber; i += 1) {
@@ -18,8 +18,8 @@ const game = () => {
   const numberA = getRandomNumber(1, 15);
   const numberB = getRandomNumber(1, 15);
   const gcdNumbers = `${numberA} ${numberB}`;
-  const dividsor = searchDividsor(numberA, numberB);
-  return [gcdNumbers, dividsor];
+  const divisor = searchDivisor(numberA, numberB);
+  return [gcdNumbers, divisor.toString()];
 };
 
 const runGameGCD = () => {
