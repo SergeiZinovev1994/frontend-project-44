@@ -17,7 +17,7 @@ const calculate = (num1, num2, operator) => {
       break;
     case '*': result = num1 * num2;
       break;
-    default: throw new Error(`unknown condition!`);
+    default: throw new Error('unknown condition!');
   }
   return result;
 };
@@ -34,8 +34,6 @@ const getDataGame = () => {
   return [exp, answer.toString()];
 };
 
-const runGameCalc = () => {
-  return gameCore(getDataGame, task);
-};
+const runGameCalc = () => gameCore(getDataGame, task);
 
 export default runGameCalc;
