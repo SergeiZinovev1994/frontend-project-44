@@ -1,13 +1,11 @@
-import gameCore from '../index.js';
+import runGameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'What number is missing in the progression?';
 
-const createProgression = (minCountElements, maxCountElements) => {
+const createProgression = (countElements, valueForStep, initialElement) => {
   const progression = [];
-  const countElements = getRandomNumber(minCountElements, maxCountElements);
-  const valueForStep = getRandomNumber(1, 20);
-  progression[0] = getRandomNumber(0, 10);
+  progression[0] = initialElement;
   for (let i = 1; i < countElements; i += 1) {
     progression[i] = progression[i - 1] + valueForStep;
   }
@@ -15,17 +13,18 @@ const createProgression = (minCountElements, maxCountElements) => {
 };
 
 const game = () => {
-  const minCountElements = 5;
-  const maxCountElements = 10;
-  const progression = createProgression(minCountElements, maxCountElements);
-  const indexOfRandomElement = getRandomNumber(0, progression.length - 1);
-  const answer = progression[indexOfRandomElement];
-  progression[indexOfRandomElement] = '..';
-  const progressionStringWithGap = progression.join(' ');
-  return [progressionStringWithGap, answer.toString()];
+  const countElements = getRandomNumber(5, 15);
+  const valueForStep = getRandomNumber(1, 20);
+  const initialElement = getRandomNumber(0, 10);
+  const progression = createProgression(countElements, valueForStep, initialElement);
+  const hiddenIndex = getRandomNumber(0, progression.length - 1);
+  const answer = progression[hiddenIndex];
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
+  return [question, answer.toString()];
 };
 
 const runGameProgression = () => {
-  gameCore(game, task);
+  runGameCore(game, task);
 };
 export default runGameProgression;
