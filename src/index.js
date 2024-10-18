@@ -1,12 +1,5 @@
 import readlineSync from 'readline-sync';
 
-export const welcome = () => {
-  console.log('Welcome to the Brain Games!');
-  const user = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${user}!`);
-  return user;
-};
-
 const countRounds = 3;
 
 export const gameCore = (getDataGame, taskText) => {
