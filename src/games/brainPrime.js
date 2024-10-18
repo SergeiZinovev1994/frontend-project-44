@@ -1,4 +1,4 @@
-import gameCore from '../index.js';
+import runGameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -17,12 +17,12 @@ const isPrime = (number) => {
 };
 
 const game = () => {
-  const randomNum = getRandomNumber(1, 100);
-  const answer = isPrime(randomNum) ? 'yes' : 'no';
-  return [randomNum, answer];
+  const number = getRandomNumber(1, 100);
+  const answer = isPrime(number) ? 'yes' : 'no';
+  return [number, answer];
 };
 
 const runGamePrime = () => {
-  gameCore(game, task);
+  runGameCore(game, task);
 };
 export default runGamePrime;
