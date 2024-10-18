@@ -1,4 +1,4 @@
-import gameCore from '../index.js';
+import runGameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -12,6 +12,6 @@ const game = () => {
 };
 
 const runGameEven = () => {
-  gameCore(game, task);
+  runGameCore(game, task);
 };
 export default runGameEven;
