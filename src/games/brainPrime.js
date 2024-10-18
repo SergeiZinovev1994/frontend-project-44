@@ -3,7 +3,6 @@ import getRandomNumber from '../utils.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-
 const isPrime = (number) => {
   let result = number !== 1;
   let i = 2;
