@@ -1,25 +1,15 @@
-import gameCore from '../index.js';
+import runGameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'What is the result of the expression?';
 
-const expression = (num1, operator, num2) => {
-  const result = `${num1} ${operator} ${num2}`;
-  return result;
-};
-
 const calculate = (num1, num2, operator) => {
-  let result = 0;
   switch (operator) {
-    case '+': result = num1 + num2;
-      break;
-    case '-': result = num1 - num2;
-      break;
-    case '*': result = num1 * num2;
-      break;
-    default: throw new Error('unknown condition!');
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    default: throw new Error(`Unknown parameter states: '${num1}' '${operator}' '${num2}'!`);
   }
-  return result;
 };
 
 const getDataGame = () => {
@@ -29,11 +19,11 @@ const getDataGame = () => {
   const minIndexOfOperator = 0;
   const maxIndexOfOperator = operator.length - 1;
   const randomOperator = operator[getRandomNumber(minIndexOfOperator, maxIndexOfOperator)];
-  const exp = expression(number1, randomOperator, number2);
+  const question = `${number1} ${randomOperator} ${number2}`;
   const answer = calculate(number1, number2, randomOperator);
-  return [exp, answer.toString()];
+  return [question, answer.toString()];
 };
 
-const runGameCalc = () => gameCore(getDataGame, task);
+const runGameCalc = () => runGameCore(getDataGame, task);
 
 export default runGameCalc;
