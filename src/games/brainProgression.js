@@ -1,4 +1,4 @@
-import { gameCore } from '../index.js';
+import gameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'What number is missing in the progression?';

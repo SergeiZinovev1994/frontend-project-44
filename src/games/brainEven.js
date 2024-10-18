@@ -1,4 +1,4 @@
-import { gameCore } from '../index.js';
+import gameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';

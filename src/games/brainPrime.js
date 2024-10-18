@@ -1,4 +1,4 @@
-import { gameCore } from '../index.js';
+import gameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
