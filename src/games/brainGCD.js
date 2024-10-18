@@ -1,4 +1,4 @@
-import gameCore from '../index.js';
+import runGameCore from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
@@ -15,15 +15,15 @@ const searchDivisor = (num1, num2) => {
 };
 
 const game = () => {
-  const numberA = getRandomNumber(1, 15);
-  const numberB = getRandomNumber(1, 15);
-  const gcdNumbers = `${numberA} ${numberB}`;
-  const divisor = searchDivisor(numberA, numberB);
-  return [gcdNumbers, divisor.toString()];
+  const number1 = getRandomNumber(1, 15);
+  const number2 = getRandomNumber(1, 15);
+  const question = `${number1} ${number2}`;
+  const divisor = searchDivisor(number1, number2);
+  return [question, divisor.toString()];
 };
 
 const runGameGCD = () => {
-  gameCore(game, task);
+  runGameCore(game, task);
 };
 
 export default runGameGCD;
